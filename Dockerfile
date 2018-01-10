@@ -10,6 +10,7 @@ ENV LD_LIBRARY_PATH 	   /opt/oracle/instantclient_11_2
 RUN apt-get update && apt-get install -y    \
 	unzip					\
 	software-properties-common              \
+        language-pack-zh-hans language-pack-zh-hans-base \
         python-software-properties &&       \
     apt-get clean && rm -Rf /var/lib/apt/lists/*
 RUN add-apt-repository -y ppa:jonathonf/python-3.6 &&   \
@@ -30,4 +31,4 @@ RUN cd /tmp/ && \
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python3.6 get-pip.py                      && \
     rm get-pip.py
-RUN export LD_LIBRARY_PATH=/opt/oracle/instantclient_11_2;pip3.6 install cx_Oracle
+RUN export LD_LIBRARY_PATH=/opt/oracle/instantclient_11_2;pip3.6 install cx_Oracle requests
