@@ -6,6 +6,7 @@ LABEL MAINTAINER="huxiba@gmail.com" 		\
 
 ENV NAGIOS_TIMEZONE        Asia/Shanghai
 ENV LD_LIBRARY_PATH 	   /opt/oracle/instantclient_11_2
+ENV LANG	zh_CN.UTF-8
 
 RUN apt-get update && apt-get install -y    \
 	unzip					\
